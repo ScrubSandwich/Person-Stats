@@ -19,7 +19,7 @@ Update the new details div with the value of text input.
 
 ## Day 2 Homework
 
-* Create a new functions called `renderColor` that returns a `div` item
+* Create a new fuction called `renderColor` that returns a `div` item
 * Call that function when adding that `div` to `colorItem`
 
 ### Bonus Credit
@@ -35,4 +35,4 @@ Update the new details div with the value of text input.
 
 ### Super Mega Bonus Credit Hyper Fighting
 
-* Be string! Do not resort to the use of `innerHTML`. Keep using `Document.createElement.
+* Be strong! Do not resort to the use of `innerHTML`. Keep using `Document.createElement`.

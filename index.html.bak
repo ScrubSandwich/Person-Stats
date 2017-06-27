@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Person Statistics</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css"
+            />
+        <link
+            rel="stylesheet"
+            href="css/index.css">
+    </head>
+    <body>
+        <h1 class="text">Person Statistics</h1>
+            
+        <form id="person-form" class="text">
+            <p>
+                <label for="personName">Name</label>
+                <input type="text" name="personName">
+
+                <label for="age">Age</label>
+                <input type="number" name="age">
+
+                <label for="favoriteColor">Color</label>
+                <input type="color" name="favoriteColor">                
+            </p>
+            <button type="submit">Go!</button>
+        </form>
+
+        <div id="details">
+            <p id="name" class="info">
+                Your Name: 
+            </p>
+            <p id="age" class="info">
+                Your Age: 
+            </p>
+            <p id="color" class="info">
+                Your Favorite Color: 
+            </p>
+        </div>
+    </body>
+    <script
+        src="js/index.js">
+    </script>
+</html>

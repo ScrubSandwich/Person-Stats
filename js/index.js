@@ -1,47 +1,43 @@
-function updatePage(ev) {
-	ev.preventDefault()
-	const f = ev.target
-	const name = f.personName.value
-	const age = f.age.value
-	const color = f.favoriteColor.value
+function renderColor(favColor) {
+  const colorDiv = document.createElement('div')
+  colorDiv.style.backgroundColor = favColor
+  colorDiv.style.width = '6rem'
+  colorDiv.style.height = '3rem'
 
-	//Refernce the detials div
-	const stats = document.querySelector('#details')
+  return colorDiv
+}
 
-	//Create a list
-	const list = document.createElement('ul')
+function renderListItem(text) {
+  const item = document.createElement('li')
+  item.textContent = text
 
-	//Create list item: Name
-	const nameItem = document.createElement('li')
-	nameItem.textContent = `Name ${name}`
-	list.appendChild(nameItem)
+  return item
+}
 
-	//Create list item: Age
-	const ageItem = document.createElement('li')
-	ageItem.textContent = `Age: ${age}`
-	list.appendChild(ageItem);
+function renderList(name, age, favoriteColor) {
+  const list = document.createElement('ul')
 
-	//Create list item: Color
-	const colorItem = document.createElement('li');
-	colorItem.textContent = `Favorite Color: ${color}`
+  list.appendChild(renderListItem(`Name: ${name}`))
+  list.appendChild(renderListItem(`Age: ${age}`))
+  list.appendChild(renderListItem(`Favorite Color: ${favoriteColor}`))
+  list.appendChild((renderColor(favoriteColor)))
 
-	const colorDiv = document.createElement('div')
-	colorItem.style.backgroundColor = color
-	colorDiv.style.backgroundColor = color
-	colorItem.appendChild(colorDiv)
+  return list 
+}
 
-	colorDiv.style.width = '3rem'
-	colorDiv.style.height = '3rem'
-	list.appendChild(colorItem)
-	
-	//Add the name and the color to a Paragraph in the details div
-	document.querySelector("#name").textContent = "Your Name: " + name
-	document.querySelector("#age").textContent = "Your Age: " + age
-	document.querySelector("#color").textContent = "Your Favorite Color: " + color
+function handleSubmit(ev) {
+  ev.preventDefault()
+  const f = ev.target
 
-	//Append the ul to the end of the div
-	stats.appendChild(list)
+  const name = f.personName.value
+  const age = f.age.value
+  const favoriteColor = f.favoriteColor.value
+
+  const list = renderList(name, age, favoriteColor)
+  const stats = document.querySelector('#stats')
+
+  stats.appendChild(list)
 }
 
 const personForm = document.querySelector('#person-form')
-personForm.addEventListener('submit', updatePage)
+personForm.addEventListener('submit', handleSubmit)
