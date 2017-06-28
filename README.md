@@ -1,5 +1,7 @@
 # Person Stats
 
+Project 1 of XTern Bootcamp 2017
+
 ## Day 1 Homework
 
 Update the new details div with the value of text input.
